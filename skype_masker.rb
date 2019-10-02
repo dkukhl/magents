@@ -8,6 +8,10 @@ class SkypeMasker < BaseMasker
     string.split('skype:').last.split('?').first
   end
 
+  def partial_length
+  	3
+  end
+
   def validate!
     super
     raise ArgumentError, 'Doesn\'t look like skype string' unless string.include?('skype:')
